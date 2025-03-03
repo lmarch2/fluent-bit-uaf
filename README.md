@@ -1,6 +1,6 @@
 # fluent-bit-uaf
 ## Description
-A use-after-free vulnerability exists in the consume_event function of Fluent Bit (flb_cf_yaml.c at line 934). This issue occurs due to improper memory management when handling YAML configuration parsing. 
+A use-after-free vulnerability exists in the cfl_list_size function of Fluent Bit (cfl_list.h at line 165).Specifically, cfl_list_size--state_pop_with_cleanup--read_config--flb_cf_yaml_create. This issue occurs due to improper memory management when handling YAML configuration parsing.
 ## libfuzzer report
 ```
 ==9==ERROR: AddressSanitizer: heap-use-after-free on address 0x50b0000018b0 at pc 0x62de6bbb40a5 bp 0x7ffc26638250 sp 0x7ffc26638248
